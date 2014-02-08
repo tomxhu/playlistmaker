@@ -20,7 +20,7 @@ exports.home = function(req, res){
 						console.log(result);
 
 						if (result.length == 1){
-							setTimeout(res.render('listener'), time*1000);
+							setTimeout(res.redirect('/listener'), time*1000);
 						} else {
 							setTimeout(res.render('listener', { title: 'Listening Device', response: result[1].url}), time*1000);
 						}
