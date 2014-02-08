@@ -1,6 +1,6 @@
-var db = require('mongoskin').db('localhost:27017/local', {safe:false});
+//var db = require('mongoskin').db('localhost:27017/local', {safe:false});
 
-//var db = require('mongoskin').db('admin:password1@ds027759.mongolab.com:27759/heroku_app22039734', {safe:false});
+var db = require('mongoskin').db('admin:password1@ds027759.mongolab.com:27759/heroku_app22039734', {safe:false});
 
 exports.home = function(req, res){
 	db.collection('queue').find().toArray(function(err, result) {
