@@ -7,6 +7,6 @@ exports.home_post_handler = function(req, res){
 	if (password == "password"){
 		res.redirect('/listener');
 	} else {
-		res.redirect('/user');
+		// incorrect password
 	}
 }
