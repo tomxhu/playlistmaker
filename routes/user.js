@@ -25,7 +25,7 @@ exports.search = function(req, res){
 	console.log(search + " search term")
 	
 	
-	request('https://gdata.youtube.com/feeds/api/videos/-/' + search.replace(/ /g,'/') + '?v=2&max-results=1&alt=json', function (error, response, body) {
+	request('https://gdata.youtube.com/feeds/api/videos?q=' + search.replace(/ /g,'/') + '&orderby=viewCount&time=all_time&alt=json', function (error, response, body) {
 		if (!error && response.statusCode == 200) {
 		var bodyJSON = JSON.parse(body);
 		console.log(body);
@@ -34,7 +34,7 @@ exports.search = function(req, res){
 		// parse json for url to store
 		var vid = bodyJSON.feed.entry[0].id.$t
 
-		var split = vid.split("video:");
+		var split = vid.split("videos\/");
 		var link = "http://www.youtube.com/embed/" + split[1] + "?autoplay=1";
 
 		var thumb = bodyJSON.feed.entry[0].media$group.media$thumbnail[3].url;
