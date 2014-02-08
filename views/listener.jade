@@ -1,4 +1,12 @@
-extends layout
+doctype html
+html
+  head
+    title= title
+    meta(http-equiv='refresh', content='5')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    block content
+
 
 block content
   h1= title

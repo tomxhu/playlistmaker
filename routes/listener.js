@@ -11,19 +11,14 @@ exports.home = function(req, res){
 				console.log("empty");
 				res.render('listener', { title: 'Listening Device'});
 			} else {
-				res.render('listener', { title: 'Listening Device', response: result[0].url});
 				var strtime = result[0].time;
 				var time = parseInt(strtime)
+				res.render('listener', { title: 'Listening Device', response: result[0].url, time: time});
 				db.collection('queue').remove(result[0],function(err){
 					if (!err) console.log('entry deleted!');
 					db.collection('queue').find().toArray(function(err, result) {
 						console.log(result);
 
-						if (result.length == 1){
-							setTimeout(res.redirect('/listener'), time*1000);
-						} else {
-							setTimeout(res.render('listener', { title: 'Listening Device', response: result[1].url}), time*1000);
-						}
 					});
 				});
 			}
