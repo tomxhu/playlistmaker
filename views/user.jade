@@ -3,3 +3,11 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  form(method='post')
+    | Search for songs
+    div
+      input(type='text', name='search')
+      input(type='submit', value='search')
+  form(method='post')
+    | Queue of songs

@@ -4,8 +4,11 @@
  */
 
 var express = require('express');
+var mongoskin = require('mongoskin');
+var home = require('./routes/home');
 var listener = require('./routes/listener');
 var user = require('./routes/user');
+var search = require('./routes/search');
 var http = require('http');
 var path = require('path');
 
@@ -31,8 +34,15 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+app.get('/', home.home);
+app.post('/', home.home_post_handler);
+
 app.get('/listener', listener.home);
+
 app.get('/user', user.home);
+app.post('/user', user.home_post_handler);
+
+app.get('/user/search', user.search);
 
 
 

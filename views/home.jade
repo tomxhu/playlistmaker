@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  form(method='post')
+    | Enter the password if you are the listener device
+    div
+      input(type='password', name='password')
+      input(type='submit', value='Log In')
+
+    a(href='/user') Or if you're a user
