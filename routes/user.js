@@ -37,13 +37,16 @@ exports.search = function(req, res){
 		var vid = bodyJSON.feed.entry[0].id.$t
 
 		var split = vid.split("videos\/");
-		var link = "http://www.youtube.com/embed/" + split[1] + "?autoplay=1";
+		//var link = "http://www.youtube.com/embed/" + split[1] + "?autoplay=1";
 
 		var thumb = bodyJSON.feed.entry[0].media$group.media$thumbnail[3].url;
 		var vtitle = bodyJSON.feed.entry[0].title.$t;
+		var time = bodyJSON.feed.entry[0].media$group.yt$duration;
 
 		// adds url to db
-		db.collection('queue').insert({type: "Youtube", url: link, title: vtitle});
+		
+		// add id to db since its YT
+		db.collection('queue').insert({type: "Youtube", url: split[1], title: vtitle, time:time});
 		db.collection('queue').find().toArray(function(err, result) {
 			if (err) throw err;
 			console.log(result);

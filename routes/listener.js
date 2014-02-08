@@ -7,14 +7,18 @@ exports.home = function(req, res){
 			if (err) throw err;
 			console.log(result);
 			if (result.length == 0){
+				// empty list of songs
 				console.log("empty");
 				res.render('listener', { title: 'Listening Device'});
 			} else {
 				res.render('listener', { title: 'Listening Device', response: result[0].url});
+				var strtime = result[0].time;
+				var time = parseInt(strtime)
 				db.collection('queue').remove(result[0],function(err){
 					if (!err) console.log('entry deleted!');
 					db.collection('queue').find().toArray(function(err, result) {
 						console.log(result);
+						setTimeout(res.redirect('listener'), time*1000);
 					});
 				});
 			}
