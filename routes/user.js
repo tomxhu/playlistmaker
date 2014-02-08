@@ -41,7 +41,7 @@ exports.search = function(req, res){
 		var vtitle = bodyJSON.feed.entry[0].title.$t;
 
 		// adds url to db
-		db.collection('queue').insert({type: "Youtube", url: link});
+		db.collection('queue').insert({type: "Youtube", url: link, title: vtitle});
 		db.collection('queue').find().toArray(function(err, result) {
 			if (err) throw err;
 			console.log(result);
