@@ -10,6 +10,8 @@
     "jade": "*",
     "stylus": "*",
     "mongoskin": "*",
-    "request": "*"
+    "request": "*",
+    "node-rdio": "*",
+    "async": "*"
   }
 }

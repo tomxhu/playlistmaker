@@ -9,7 +9,7 @@ exports.home = function(req, res){
 			if (result.length == 0){
 				// empty list of songs
 				console.log("empty");
-				res.render('listener', { title: 'Listening Device'});
+				res.render('listener', { title: 'Listening Device', time: 5});
 			} else {
 				var strtime = result[0].time.seconds;
 				console.log(strtime);
