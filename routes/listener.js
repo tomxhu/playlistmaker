@@ -11,7 +11,7 @@ exports.home = function(req, res){
 				console.log("empty");
 				res.render('listener', { title: 'Listening Device'});
 			} else {
-				var strtime = result[0].time;
+				var strtime = result[0].time.seconds;
 				console.log(strtime);
 				var time = parseInt(strtime);
 				console.log(time);
