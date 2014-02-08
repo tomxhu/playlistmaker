@@ -5,6 +5,7 @@
 
 var express = require('express');
 var mongoskin = require('mongoskin');
+var request = require('request');
 var home = require('./routes/home');
 var listener = require('./routes/listener');
 var user = require('./routes/user');
@@ -43,6 +44,7 @@ app.get('/user', user.home);
 app.post('/user', user.home_post_handler);
 
 app.get('/user/search', user.search);
+app.post('/user/search', user.search_post_handler);
 
 
 
