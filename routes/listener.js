@@ -12,7 +12,8 @@ exports.home = function(req, res){
 				res.render('listener', { title: 'Listening Device'});
 			} else {
 				var strtime = result[0].time;
-				var time = parseInt(strtime)
+				var time = parseInt(strtime);
+				console.log(time);
 				res.render('listener', { title: 'Listening Device', response: result[0].url, time: time});
 				db.collection('queue').remove(result[0],function(err){
 					if (!err) console.log('entry deleted!');
