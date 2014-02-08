@@ -38,7 +38,7 @@ exports.search = function(req, res){
 		var link = "http://www.youtube.com/embed/" + split[1] + "?autoplay=1";
 
 		var thumb = bodyJSON.feed.entry[0].media$group.media$thumbnail[3].url;
-		var title = bodyJSON.feed.entry[0].title.$t;
+		var vtitle = bodyJSON.feed.entry[0].title.$t;
 
 		// adds url to db
 		db.collection('queue').insert({type: "Youtube", url: link});
@@ -47,7 +47,7 @@ exports.search = function(req, res){
 			console.log(result);
 		});
 
-		res.render('search', { title: 'Search', query: search, responce: thumb, title: title});
+		res.render('search', { title: 'Search', query: search, response: thumb, vtitle: vtitle});
 		}
 	});
 	
