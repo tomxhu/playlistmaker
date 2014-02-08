@@ -18,7 +18,7 @@ exports.home = function(req, res){
 					if (!err) console.log('entry deleted!');
 					db.collection('queue').find().toArray(function(err, result) {
 						console.log(result);
-						setTimeout(res.redirect('listener'), time*1000);
+						setTimeout(res.redirect('/listener'), time*1000);
 					});
 				});
 			}
