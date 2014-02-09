@@ -36,6 +36,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+app.use('/public', express.static(__dirname + '/public'));
 
 app.get('/', home.home);
 app.post('/', home.home_post_handler);
