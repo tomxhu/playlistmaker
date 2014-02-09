@@ -6,7 +6,7 @@ var request = require('request');
 
 exports.home = function(req, res){
 	// get current queue data
-	res.render('user', { title: 'Playlistr User Device' }) // pass as a var 
+	res.render('user', { title: 'Playlstr User Device' }) // pass as a var 
 };
 
 exports.home_post_handler = function(req, res){

@@ -1,0 +1,39 @@
+body {
+  padding: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image:url("../playlstr_lg_sm.jpg");
+  background-size:cover;
+}
+a {
+  color: #00b7ff;
+}
+
+#lg_logo{
+	width:75%;
+}
+.greeting{
+	font-family: 'Fenix', serif;
+	margin-top: 14%;
+	font-size: 47pt;
+	line-height: 0px;
+}
+
+#youtube{
+	width:49%;
+	float:left;
+}
+.song{
+	background-color: #63C6FD;
+	margin-bottom: 10px;
+}
+#soundcloud{
+	width: 49%;
+	float:right;
+}
+/*
+.song_text{
+	float:left;
+}
+.pict{
+	float:right;
+}*/
