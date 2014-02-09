@@ -39,7 +39,7 @@ if ('development' == app.get('env')) {
 app.use('/public', express.static(__dirname + '/public'));
 
 app.get('/', user.home);
-app.post('/', home.home_post_handler);
+app.post('/', user.home_post_handler);
 
 app.get('/listener', listener.home);
 
