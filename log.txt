@@ -1,0 +1,102 @@
+2014-02-09T02:45:54.659820+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path=/user/search host=playlstr.herokuapp.com request_id=df0b2b5b-45c5-41d3-936a-1f8c8c5fc3f9 fwd="204.9.220.50" dyno=web.1 connect=1ms service=1359ms status=503 bytes=0
+2014-02-09T02:45:56.056254+00:00 heroku[web.1]: Process exited with status 8
+2014-02-09T02:45:56.072573+00:00 heroku[web.1]: State changed from up to crashed
+2014-02-09T02:45:56.077227+00:00 heroku[web.1]: State changed from crashed to starting
+2014-02-09T02:45:58.320426+00:00 heroku[web.1]: Starting process with command `node app.js`
+2014-02-09T02:45:59.998769+00:00 heroku[web.1]: State changed from starting to up
+2014-02-09T02:45:59.754932+00:00 app[web.1]: Express server listening on port 7305
+2014-02-09T02:46:00.748498+00:00 app[web.1]: []
+2014-02-09T02:46:00.748498+00:00 app[web.1]: empty
+2014-02-09T02:46:01.136718+00:00 app[web.1]: [90mGET /listener [36m304 [90m429ms[0m
+2014-02-09T02:46:01.305440+00:00 app[web.1]: [90mGET /stylesheets/style.css [32m200 [90m105ms - 110b[0m
+2014-02-09T02:45:43.266109+00:00 heroku[router]: at=info method=GET path=/stylesheets/style.css host=playlstr.herokuapp.com request_id=79b83724-5e5c-4aba-8281-08637a9af263 fwd="204.9.220.50" dyno=web.1 connect=6ms service=13ms status=200 bytes=110
+2014-02-09T02:46:05.089279+00:00 heroku[router]: at=info method=GET path=/listener host=playlstr.herokuapp.com request_id=6823d3aa-3719-452d-a04f-2fc4099b4ccd fwd="204.9.220.50" dyno=web.1 connect=2ms service=41ms status=304 bytes=0
+2014-02-09T02:46:05.088407+00:00 app[web.1]: [90mGET /listener [36m304 [90m38ms[0m
+2014-02-09T02:46:05.056400+00:00 app[web.1]: empty
+2014-02-09T02:46:05.055606+00:00 app[web.1]: []
+2014-02-09T02:46:05.277738+00:00 app[web.1]: [90mGET /stylesheets/style.css [32m200 [90m7ms - 110b[0m
+2014-02-09T02:46:01.135167+00:00 heroku[router]: at=info method=GET path=/listener host=playlstr.herokuapp.com request_id=12a88142-76be-41ae-8b93-5ff6123cebd7 fwd="204.9.220.50" dyno=web.1 connect=1ms service=433ms status=304 bytes=0
+2014-02-09T02:46:01.304785+00:00 heroku[router]: at=info method=GET path=/stylesheets/style.css host=playlstr.herokuapp.com request_id=862221c5-ac6a-46f4-b15d-7a52606146d3 fwd="204.9.220.50" dyno=web.1 connect=1ms service=107ms status=200 bytes=110
+2014-02-09T02:46:06.356286+00:00 app[web.1]: []
+2014-02-09T02:46:06.356286+00:00 app[web.1]: empty
+2014-02-09T02:46:06.384444+00:00 app[web.1]: [90mGET /listener [36m304 [90m31ms[0m
+2014-02-09T02:46:06.482692+00:00 heroku[router]: at=info method=GET path=/stylesheets/style.css host=playlstr.herokuapp.com request_id=a0d6c660-2952-463f-856e-16caa6b13dee fwd="204.9.220.50" dyno=web.1 connect=1ms service=5ms status=304 bytes=0
+2014-02-09T02:46:06.481844+00:00 app[web.1]: [90mGET /stylesheets/style.css [36m304 [90m3ms[0m
+2014-02-09T02:46:10.376028+00:00 app[web.1]: []
+2014-02-09T02:46:10.376028+00:00 app[web.1]: empty
+2014-02-09T02:46:10.394007+00:00 app[web.1]: [90mGET /listener [36m304 [90m20ms[0m
+2014-02-09T02:46:10.448127+00:00 app[web.1]: [90mGET /stylesheets/style.css [36m304 [90m3ms[0m
+2014-02-09T02:46:11.675925+00:00 heroku[router]: at=info method=GET path=/listener host=playlstr.herokuapp.com request_id=eb7127d7-cf27-43a7-82dc-671ab5558e2c fwd="204.9.220.50" dyno=web.1 connect=1ms service=34ms status=304 bytes=0
+2014-02-09T02:46:11.646660+00:00 app[web.1]: []
+2014-02-09T02:46:11.646660+00:00 app[web.1]: empty
+2014-02-09T02:46:11.676545+00:00 app[web.1]: [90mGET /listener [36m304 [90m33ms[0m
+2014-02-09T02:46:11.861167+00:00 heroku[router]: at=info method=GET path=/stylesheets/style.css host=playlstr.herokuapp.com request_id=4953c7f5-5907-4c21-bc31-ca3fbcc2f518 fwd="204.9.220.50" dyno=web.1 connect=8ms service=6ms status=304 bytes=0
+2014-02-09T02:46:11.856394+00:00 app[web.1]: [90mGET /stylesheets/style.css [36m304 [90m3ms[0m
+2014-02-09T02:46:12.023060+00:00 heroku[router]: at=info method=GET path=/user host=playlstr.herokuapp.com request_id=9b821584-eba2-4c3e-aa9e-987be6b8a0b5 fwd="204.9.220.50" dyno=web.1 connect=2ms service=37ms status=200 bytes=376
+2014-02-09T02:46:12.023210+00:00 app[web.1]: [90mGET /user [32m200 [90m35ms - 376b[0m
+2014-02-09T02:46:13.816640+00:00 heroku[router]: at=info method=GET path=/user host=playlstr.herokuapp.com request_id=15914b89-5827-4f6a-90a1-db31bc924148 fwd="204.9.220.50" dyno=web.1 connect=0ms service=14ms status=304 bytes=0
+2014-02-09T02:46:13.818126+00:00 app
+[web.1]: []
+2014-02-09T02:46:13.818126+00:00 app[web.1]: empty
+2014-02-09T02:46:13.828169+00:00 app[web.1]: [90mGET /listener [36m304 [90m25ms[0m
+2014-02-09T02:46:13.817709+00:00 app[web.1]: [90mGET /user [36m304 [90m12ms[0m
+2014-02-09T02:46:13.895590+00:00 heroku[router]: at=info method=GET path=/stylesheets/style.css host=playlstr.herokuapp.com request_id=13e50591-be8d-4ec3-ad1b-5426494ffab0 fwd="204.9.220.50" dyno=web.1 connect=0ms service=6ms status=200 bytes=110
+2014-02-09T02:46:13.896522+00:00 app[web.1]: [90mGET /stylesheets/style.css [32m200 [90m5ms - 110b[0m
+2014-02-09T02:46:13.970143+00:00 app[web.1]: [90mGET /stylesheets/style.css [36m304 [90m2ms[0m
+2014-02-09T02:46:13.969269+00:00 heroku[router]: at=info method=GET path=/stylesheets/style.css host=playlstr.herokuapp.com request_id=0e98287a-1e51-4b41-9858-da8591c2da68 fwd="204.9.220.50" dyno=web.1 connect=1ms service=4ms status=304 bytes=0
+2014-02-09T02:46:15.581757+00:00 heroku[router]: at=info method=GET path=/stylesheets/style.css host=playlstr.herokuapp.com request_id=0266cfbe-cd2f-4fde-a4cd-2c1247a0d650 fwd="204.9.220.50" dyno=web.1 connect=2ms service=5ms status=304 bytes=0
+2014-02-09T02:46:15.527285+00:00 app[web.1]: []
+2014-02-09T02:46:15.527285+00:00 app[web.1]: empty
+2014-02-09T02:46:15.535538+00:00 app[web.1]: [90mGET /listener [36m304 [90m13ms[0m
+2014-02-09T02:46:15.581147+00:00 app[web.1]: [90mGET /stylesheets/style.css [36m304 [90m2ms[0m
+2014-02-09T02:46:19.045774+00:00 heroku[router]: at=info method=GET path=/listener host=playlstr.herokuapp.com request_id=4dae4423-7910-44b2-b121-bf8b0724e575 fwd="204.9.220.50" dyno=web.1 connect=1ms service=16ms status=304 bytes=0
+2014-02-09T02:46:19.032941+00:00 app[web.1]: []
+2014-02-09T02:46:19.032941+00:00 app[web.1]: empty
+2014-02-09T02:46:19.045550+00:00 app[web.1]: [90mGET /listener [36m304 [90m15ms[0m
+2014-02-09T02:46:19.266897+00:00 heroku[router]: at=info method=GET path=/stylesheets/style.css host=playlstr.herokuapp.com request_id=8901ff04-1740-4de0-8c7e-c9a3ddd81d98 fwd="204.9.220.50" dyno=web.1 connect=3ms service=5ms status=304 bytes=0
+2014-02-09T02:46:10.394433+00:00 heroku[router]: at=info method=GET path=/listener host=playlstr.herokuapp.com request_id=4eaa1776-2a95-4e5c-a928-dc98b7eb6d65 fwd="204.9.220.50" dyno=web.1 connect=3ms service=24ms status=304 bytes=0
+2014-02-09T02:46:19.265738+00:00 app[web.1]: [90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+2014-02-09T02:46:20.363831+00:00 app[web.1]: [90mGET /user [36m304 [90m12ms[0m
+2014-02-09T02:46:20.364929+00:00 heroku[router]: at=info method=GET path=/user host=playlstr.herokuapp.com request_id=0a625ca8-54d5-4f4b-af7e-c2f64231a778 fwd="204.9.220.50" dyno=web.1 connect=2ms service=14ms status=304 bytes=0
+2014-02-09T02:46:20.711418+00:00 heroku[router]: at=info method=GET path=/stylesheets/style.css host=playlstr.herokuapp.com request_id=7186c200-74df-466b-a350-a188d7c0e235 fwd="204.9.220.50" dyno=web.1 connect=2ms service=6ms status=304 bytes=0
+2014-02-09T02:46:20.538005+00:00 app[web.1]: [90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+2014-02-09T02:46:20.646498+00:00 app[web.1]: []
+2014-02-09T02:46:20.646498+00:00 app[web.1]: empty
+2014-02-09T02:46:20.661932+00:00 app[web.1]: [90mGET /listener [36m304 [90m18ms[0m
+2014-02-09T02:46:20.662123+00:00 heroku[router]: at=info method=GET path=/listener host=playlstr.herokuapp.com request_id=242faae6-3301-4c35-a1d4-5bca62e4ec94 fwd="204.9.220.50" dyno=web.1 connect=2ms service=23ms status=304 bytes=0
+2014-02-09T02:46:20.546774+00:00 heroku[router]: at=info method=GET path=/stylesheets/style.css host=playlstr.herokuapp.com request_id=afb950a0-6063-4b86-a76d-7007724d11f0 fwd="204.9.220.50" dyno=web.1 connect=13ms service=13ms status=304 bytes=0
+2014-02-09T02:46:20.710625+00:00 app[web.1]: [90mGET /stylesheets/style.css [36m304 [90m2ms[0m
+2014-02-09T02:46:22.232718+00:00 heroku[router]: at=info method=POST path=/ host=playlstr.herokuapp.com request_id=1b60c140-f4c1-494e-b1fe-351fb4b0c9c6 fwd="204.9.220.50" dyno=web.1 connect=2ms service=13ms status=302 bytes=74
+2014-02-09T02:46:22.233784+00:00 app[web.1]: [90mPOST / [36m302 [90m6ms - 74b[0m
+2014-02-09T02:46:22.336542+00:00 heroku[router]: at=info method=GET path=/stylesheets/style.css host=playlstr.herokuapp.com request_id=45ea9b80-bd93-492d-92d2-8166e32324cf fwd="204.9.220.50" dyno=web.1 connect=1ms service=7ms status=200 bytes=110
+2014-02-09T02:46:22.261756+00:00 app[web.1]: []
+2014-02-09T02:46:22.261756+00:00 app[web.1]: empty
+2014-02-09T02:46:22.275451+00:00 app[web.1]: [90mGET /listener [36m304 [90m16ms[0m
+2014-02-09T02:46:22.336542+00:00 app[web.1]: [90mGET /stylesheets/style.css [32m200 [90m3ms - 110b[0m
+2014-02-09T02:46:22.922772+00:00 heroku[router]: at=info method=POST path=/user host=playlstr.herokuapp.com request_id=a1f1bf9c-b638-480c-8268-1afe51ac36a2 fwd="204.9.220.50" dyno=web.1 connect=11ms service=11ms status=302 bytes=80
+2014-02-09T02:46:22.913729+00:00 app[web.1]: [90mPOST /user [36m302 [90m3ms - 80b[0m
+2014-02-09T02:46:23.659438+00:00 app[web.1]: [90mPOST /user [36m302 [90m2ms - 80b[0m
+2014-02-09T02:46:24.047072+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path=/user/search host=playlstr.herokuapp.com request_id=088196f4-5bdb-4234-b080-1b5533622c25 fwd="204.9.220.50" dyno=web.1 connect=0ms service=333ms status=503 bytes=0
+2014-02-09T02:46:24.028251+00:00 app[web.1]:     at Request.EventEmitter.emit (events.js:98:17)
+2014-02-09T02:46:24.028251+00:00 app[web.1]:     at Request.<anonymous> (/app/node_modules/request/request.js:888:14)
+2014-02-09T02:46:24.028251+00:00 app[web.1]:     at Request.EventEmitter.emit (events.js:117:20)
+2014-02-09T02:46:24.023279+00:00 app[web.1]: 
+2014-02-09T02:46:24.028251+00:00 app[web.1]:     at Request.self.callback (/app/node_modules/request/request.js:122:22)
+2014-02-09T02:46:24.028251+00:00 app[web.1]: TypeError: Cannot read property 'id' of undefined
+2014-02-09T02:46:24.028251+00:00 app[web.1]:     at IncomingMessage.<anonymous> (/app/node_modules/request/request.js:839:12)
+2014-02-09T02:46:24.028251+00:00 app[web.1]:     at Request._callback (/app/routes/user.js:94:28)
+2014-02-09T02:46:24.028251+00:00 app[web.1]:     at IncomingMessage.EventEmitter.emit (events.js:117:20)
+2014-02-09T02:46:24.028251+00:00 app[web.1]:     at _stream_readable.js:920:16
+2014-02-09T02:46:24.028251+00:00 app[web.1]:     at process._tickCallback (node.js:415:13)
+2014-02-09T02:46:23.669447+00:00 heroku[router]: at=info method=POST path=/user host=playlstr.herokuapp.com request_id=35b072b1-f2e0-4077-8361-72c9460971ea fwd="204.9.220.50" dyno=web.1 connect=6ms service=12ms status=302 bytes=80
+2014-02-09T02:46:24.044886+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path=/user/search host=playlstr.herokuapp.com request_id=30fba626-a126-474b-aa8c-41caf49c9cae fwd="204.9.220.50" dyno=web.1 connect=0ms service=1102ms status=503 bytes=0
+2014-02-09T02:46:25.237592+00:00 heroku[web.1]: Process exited with status 8
+2014-02-09T02:46:25.249844+00:00 heroku[web.1]: State changed from up to crashed
+2014-02-09T02:46:25.758479+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/listener host=playlstr.herokuapp.com request_id=3b7db949-dfa0-4aee-a3a8-51daccb4972d fwd="204.9.220.50" dyno= connect= service= status=503 bytes=
+2014-02-09T02:46:27.871477+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/user host=playlstr.herokuapp.com request_id=41213240-5e9a-4c7a-b679-6936536cd1cf fwd="204.9.220.50" dyno= connect= service= status=503 bytes=
+2014-02-09T02:46:30.165922+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/user/search host=playlstr.herokuapp.com request_id=5e802350-2f49-425c-8b8e-6d45f78426d4 fwd="204.9.220.50" dyno= connect= service= status=503 bytes=
+2014-02-09T02:46:22.275550+00:00 heroku[router]: at=info method=GET path=/listener host=playlstr.herokuapp.com request_id=6ddb68c6-ee74-4510-8336-e02719aaec0c fwd="204.9.220.50" dyno=web.1 connect=2ms service=19ms status=304 bytes=0
+2014-02-09T02:46:33.659510+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/user host=playlstr.herokuapp.com request_id=3487523f-cdc1-4add-9017-695801e81d93 fwd="204.9.220.50" dyno= connect= service= status=503 bytes=
+2014-02-09T02:46:34.936970+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=playlstr.herokuapp.com request_id=085924f5-6c29-4276-b47a-edf9aa20137a fwd="204.9.220.50" dyno= connect= service= status=503 bytes=
+2014-02-09T02:45:40.200329+00:00 heroku[router]: at=info method=GET path=/stylesheets/style.css host=playlstr.herokuapp.com request_id=6eb64c21-90f1-4d52-962e-9a018769bb4f fwd="204.9.220.50" dyno=web.1 connect=1ms service=8ms status=304 bytes=0
+2014-02-09T02:45:42.141600+00:00 heroku[router]: at=info method=GET path=/listener host=playlstr.herokuapp.com request_id=3ea9c2d6-127a-4a3a-b9fc-fbb9a1d31b91 fwd="204.9.220.50" dyno=web.1 connect=2ms service=94ms status=304 bytes=0
