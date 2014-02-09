@@ -37,7 +37,7 @@ exports.home_post_handler = function(req, res){
 	var id = req.body.id;
 
 	if(req.body.link && req.body.type){
-		db.collection('queue').insert({type: req.body.type, url: req.body.type});
+		db.collection('queue').insert({type: req.body.type, url: req.body.link});
 		db.collection('queue').find().toArray(function(err, result) {
 			if (err) throw err;
 			console.log(result);
