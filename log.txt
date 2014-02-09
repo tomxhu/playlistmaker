@@ -1,0 +1,101 @@
+2014-02-09T16:01:04.291345+00:00 heroku[router]: at=info method=GET path=/listener host=playlstr.herokuapp.com request_id=4db41216-ef63-43a9-84f2-029d473167aa fwd="204.9.220.50" dyno=web.1 connect=11ms service=25ms status=200 bytes=374
+2014-02-09T16:03:35.114443+00:00 heroku[router]: at=info method=GET path=/public/stylesheets/style.css host=playlstr.herokuapp.com request_id=8186a4b0-bc13-4f2f-af38-a7ec8dafcfd3 fwd="204.9.220.50" dyno=web.1 connect=0ms service=13ms status=404 bytes=52
+2014-02-09T16:03:35.110039+00:00 app[web.1]: [90mGET /public/stylesheets/style.css [33m404 [90m6ms[0m
+2014-02-09T16:03:13.810818+00:00 heroku[router]: at=info method=GET path=/ host=playlstr.herokuapp.com request_id=110e8fff-951a-4d0e-9e2a-fc9074f37851 fwd="204.9.220.50" dyno=web.1 connect=10ms service=390ms status=304 bytes=0
+2014-02-09T16:04:58.912569+00:00 app[web.1]: []
+2014-02-09T16:04:58.912569+00:00 app[web.1]: empty
+2014-02-09T16:04:58.932829+00:00 app[web.1]: [90mGET /listener [32m200 [90m50ms - 314b[0m
+2014-02-09T16:04:59.213422+00:00 app[web.1]: [90mGET /css/style.css [32m200 [90m116ms - 110b[0m
+2014-02-09T16:04:59.219489+00:00 heroku[router]: at=info method=GET path=/css/style.css host=playlstr.herokuapp.com request_id=8af6100e-6cbd-4034-98ce-14ea8e08c525 fwd="204.9.220.50" dyno=web.1 connect=3ms service=183ms status=200 bytes=110
+2014-02-09T16:04:58.934628+00:00 heroku[router]: at=info method=GET path=/listener host=playlstr.herokuapp.com request_id=67382835-212d-4d58-ae69-0970a1b11da0 fwd="204.9.220.50" dyno=web.1 connect=1ms service=52ms status=200 bytes=314
+2014-02-09T16:01:27.453881+00:00 heroku[router]: at=info method=GET path=/css/style.css host=playlstr.herokuapp.com request_id=4d949f16-9822-4342-9e5a-0246f42b422c fwd="204.9.220.50" dyno=web.1 connect=29ms service=13ms status=304 bytes=0
+2014-02-09T16:05:04.423003+00:00 app[web.1]: []
+2014-02-09T16:05:04.423003+00:00 app[web.1]: empty
+2014-02-09T16:05:04.537587+00:00 app[web.1]: [90mGET /css/style.css [36m304 [90m2ms[0m
+2014-02-09T16:05:04.441451+00:00 app[web.1]: [90mGET /listener [36m304 [90m22ms[0m
+2014-02-09T16:05:09.687940+00:00 app[web.1]: empty
+2014-02-09T16:05:09.687940+00:00 app[web.1]: []
+2014-02-09T16:05:09.708478+00:00 app[web.1]: [90mGET /listener [36m304 [90m22ms[0m
+2014-02-09T16:05:09.836258+00:00 app[web.1]: [90mGET /css/style.css [36m304 [90m9ms[0m
+2014-02-09T16:05:14.993702+00:00 app[web.1]: []
+2014-02-09T16:05:14.993702+00:00 app[web.1]: empty
+2014-02-09T16:05:15.017946+00:00 app[web.1]: [90mGET /listener [36m304 [90m26ms[0m
+2014-02-09T16:05:15.027271+00:00 heroku[router]: at=info method=GET path=/listener host=playlstr.herokuapp.com request_id=ac05a91b-1d10-4fab-bf22-92e6f2006b5c fwd="204.9.220.50" dyno=web.1 connect=52ms service=42ms status=304 bytes=0
+2014-02-09T16:05:15.121765+00:00 app[web.1]: [90mGET /css/style.css [36m304 [90m2ms[0m
+2014-02-09T16:05:09.710185+00:00 heroku[router]: at=info method=GET path=/listener host=playlstr.herokuapp.com request_id=c2fd0534-a8bb-4f8f-8935-c2fa3e642f87 fwd="204.9.220.50" dyno=web.1 connect=32ms service=85ms status=304 bytes=0
+2014-02-09T16:05:20.178537+00:00 app[web.1]: []
+2014-02-09T16:05:20.178537+00:00 app[web.1]: empty
+2014-02-09T16:05:20.195859+00:00 app[web.1]: [90mGET /listener [36m304 [90m19ms[0m
+2014-02-09T16:05:20.276879+00:00 app[web.1]: [90mGET /css/style.css [36m304 [90m1ms[0m
+2014-02-09T16:05:09.834923+00:00 heroku[router]: at=info method=GET path=/css/style.css host=playlstr.herokuapp.com request_id=93398361-f299-4fd7-8567-3d0177918076 fwd="204.9.220.50" dyno=web.1 connect=3ms service=11ms status=304 bytes=0
+2014-02-09T16:05:25.576135+00:00 heroku[router]: at=info method=GET path=/listener host=playlstr.herokuapp.com request_id=a58715da-5a2b-48b5-902b-4a24523df528 fwd="204.9.220.50" dyno=web.1 connect=7ms service=54ms status=304 bytes=0
+2014-02-09T16:05:25.526749+00:00 app[web.1]: empty
+2014-02-09T16:05:25.536464+00:00 app[web.1]: [90mGET /listener [36m304 [90m11ms[0m
+2014-02-09T16:05:25.526749+00:00 app[web.1]: []
+2014-02-09T16:05:25.672076+00:00 app[web.1]: [90mGET /css/style.css [36m304 [90m1ms[0m
+2014-02-09T16:05:30.815781+00:00 heroku[router]: at=info method=GET path=/css/style.css host=playlstr.herokuapp.com request_id=1b870d5e-2383-4de4-94f4-a9c84da71bb8 fwd="204.9.220.50" dyno=web.1 connect=2ms service=3ms status=304 bytes=0
+2014-02-09T16:05:30.734924+00:00 app[web.1]: []
+2014-02-09T16:05:30.734924+00:00 app[web.1]: empty
+2014-02-09T16:05:30.744102+00:00 app[web.1]: [90mGET /listener [36m304 [90m13ms[0m
+2014-02-09T16:05:30.816275+00:00 app[web.1]: [90mGET /css/style.css [36m304 [90m2ms[0m
+2014-02-09T16:01:05.919669+00:00 heroku[router]: at=info method=GET path=/css/style.css host=playlstr.herokuapp.com request_id=136bc3fc-4253-400c-a68e-ad37b696b401 fwd="204.9.220.50" dyno=web.1 connect=0ms service=3ms status=304 bytes=0
+2014-02-09T16:05:36.012823+00:00 app[web.1]: []
+2014-02-09T16:05:36.013353+00:00 app[web.1]: empty
+2014-02-09T16:05:36.021578+00:00 app[web.1]: [90mGET /listener [36m304 [90m10ms[0m
+2014-02-09T16:05:36.370777+00:00 heroku[router]: at=info method=GET path=/css/style.css host=playlstr.herokuapp.com request_id=1d7684ca-46b4-4e8d-a169-4c1d2fd91f68 fwd="204.9.220.50" dyno=web.1 connect=14ms service=14ms status=304 bytes=0
+2014-02-09T16:05:36.362597+00:00 app[web.1]: [90mGET /css/style.css [36m304 [90m1ms[0m
+2014-02-09T16:05:04.435547+00:00 heroku[router]: at=info method=GET path=/listener host=playlstr.herokuapp.com request_id=7cc40953-d1e3-4663-9bca-ec1fe6299bed fwd="204.9.220.50" dyno=web.1 connect=1ms service=24ms status=304 bytes=0
+2014-02-09T16:05:04.531514+00:00 heroku[router]: at=info method=GET path=/css/style.css host=playlstr.herokuapp.com request_id=55a020dc-6c17-4b46-9a2e-42452ea18f9e fwd="204.9.220.50" dyno=web.1 connect=1ms service=4ms status=304 bytes=0
+2014-02-09T16:05:41.421737+00:00 app[web.1]: []
+2014-02-09T16:05:41.421737+00:00 app[web.1]: empty
+2014-02-09T16:05:41.427796+00:00 heroku[router]: at=info method=GET path=/listener host=playlstr.herokuapp.com request_id=87260e36-48b1-4f2f-a07f-b559e4603b17 fwd="204.9.220.50" dyno=web.1 connect=1ms service=10ms status=304 bytes=0
+2014-02-09T16:05:41.593757+00:00 heroku[router]: at=info method=GET path=/css/style.css host=playlstr.herokuapp.com request_id=dd87d76e-e5d0-4ca7-90ac-f5db62c82921 fwd="204.9.220.50" dyno=web.1 connect=9ms service=12ms status=304 bytes=0
+2014-02-09T16:05:41.428266+00:00 app[web.1]: [90mGET /listener [36m304 [90m8ms[0m
+2014-02-09T16:05:41.585259+00:00 app[web.1]: [90mGET /css/style.css [36m304 [90m2ms[0m
+2014-02-09T16:05:46.729100+00:00 app[web.1]: []
+2014-02-09T16:05:46.738044+00:00 app[web.1]: [90mGET /listener [36m304 [90m10ms[0m
+2014-02-09T16:05:46.729100+00:00 app[web.1]: empty
+2014-02-09T16:05:46.749598+00:00 heroku[router]: at=info method=GET path=/listener host=playlstr.herokuapp.com request_id=24c2c042-dbba-4986-909c-6950645f6341 fwd="204.9.220.50" dyno=web.1 connect=11ms service=23ms status=304 bytes=0
+2014-02-09T16:05:46.849195+00:00 heroku[router]: at=info method=GET path=/css/style.css host=playlstr.herokuapp.com request_id=fa54ffa8-ef74-4877-82f1-675d318fe0e2 fwd="204.9.220.50" dyno=web.1 connect=1ms service=5ms status=304 bytes=0
+2014-02-09T16:05:46.847435+00:00 app[web.1]: [90mGET /css/style.css [36m304 [90m2ms[0m
+2014-02-09T16:05:20.271000+00:00 heroku[router]: at=info method=GET path=/css/style.css host=playlstr.herokuapp.com request_id=0127c453-6607-4b93-b92a-e139a0512dc9 fwd="204.9.220.50" dyno=web.1 connect=3ms service=4ms status=304 bytes=0
+2014-02-09T16:05:51.903118+00:00 app[web.1]: empty
+2014-02-09T16:05:51.914332+00:00 app[web.1]: [90mGET /listener [36m304 [90m13ms[0m
+2014-02-09T16:05:51.999545+00:00 app[web.1]: [90mGET /css/style.css [36m304 [90m3ms[0m
+2014-02-09T16:05:51.903118+00:00 app[web.1]: []
+2014-02-09T16:05:57.056020+00:00 app[web.1]: []
+2014-02-09T16:05:57.056020+00:00 app[web.1]: empty
+2014-02-09T16:05:57.067620+00:00 heroku[router]: at=info method=GET path=/listener host=playlstr.herokuapp.com request_id=1ee486f9-f5e8-4173-a4c9-7607ee29f811 fwd="204.9.220.50" dyno=web.1 connect=1ms service=17ms status=304 bytes=0
+2014-02-09T16:05:57.067812+00:00 app[web.1]: [90mGET /listener [36m304 [90m13ms[0m
+2014-02-09T16:05:57.256865+00:00 heroku[router]: at=info method=GET path=/css/style.css host=playlstr.herokuapp.com request_id=966a1b34-d414-4e39-94f4-94007c0f30e9 fwd="204.9.220.50" dyno=web.1 connect=40ms service=72ms status=304 bytes=0
+2014-02-09T16:05:57.254851+00:00 app[web.1]: [90mGET /css/style.css [36m304 [90m2ms[0m
+2014-02-09T16:06:02.481490+00:00 app[web.1]: empty
+2014-02-09T16:06:02.490189+00:00 app[web.1]: [90mGET /listener [36m304 [90m10ms[0m
+2014-02-09T16:06:02.481490+00:00 app[web.1]: []
+2014-02-09T16:06:02.577540+00:00 app[web.1]: [90mGET /css/style.css [36m304 [90m2ms[0m
+2014-02-09T16:06:07.668491+00:00 heroku[router]: at=info method=GET path=/listener host=playlstr.herokuapp.com request_id=cb789581-378e-4430-b881-bad06dd71232 fwd="204.9.220.50" dyno=web.1 connect=1ms service=16ms status=304 bytes=0
+2014-02-09T16:06:07.776301+00:00 heroku[router]: at=info method=GET path=/css/style.css host=playlstr.herokuapp.com request_id=8a1b68b5-3f1b-4c3f-972c-c72a10d60723 fwd="204.9.220.50" dyno=web.1 connect=2ms service=4ms status=304 bytes=0
+2014-02-09T16:06:07.655094+00:00 app[web.1]: []
+2014-02-09T16:06:07.655094+00:00 app[web.1]: empty
+2014-02-09T16:06:07.774730+00:00 app[web.1]: [90mGET /css/style.css [36m304 [90m1ms[0m
+2014-02-09T16:06:07.666496+00:00 app[web.1]: [90mGET /listener [36m304 [90m13ms[0m
+2014-02-09T16:05:25.671994+00:00 heroku[router]: at=info method=GET path=/css/style.css host=playlstr.herokuapp.com request_id=c1590bb1-9760-4819-9520-6d22230b6a08 fwd="204.9.220.50" dyno=web.1 connect=1ms service=3ms status=304 bytes=0
+2014-02-09T16:06:12.873380+00:00 app[web.1]: empty
+2014-02-09T16:06:12.873380+00:00 app[web.1]: []
+2014-02-09T16:06:12.881768+00:00 app[web.1]: [90mGET /listener [36m304 [90m10ms[0m
+2014-02-09T16:06:13.253936+00:00 app[web.1]: [90mGET /css/style.css [36m304 [90m1ms[0m
+2014-02-09T16:06:18.454528+00:00 app[web.1]: []
+2014-02-09T16:06:18.454528+00:00 app[web.1]: empty
+2014-02-09T16:06:18.465294+00:00 app[web.1]: [90mGET /listener [36m304 [90m13ms[0m
+2014-02-09T16:06:18.567616+00:00 app[web.1]: [90mGET /css/style.css [36m304 [90m1ms[0m
+2014-02-09T16:05:36.029754+00:00 heroku[router]: at=info method=GET path=/listener host=playlstr.herokuapp.com request_id=7c195e6c-a616-4e28-901a-783fc2e906fc fwd="204.9.220.50" dyno=web.1 connect=10ms service=20ms status=304 bytes=0
+2014-02-09T16:06:23.668556+00:00 app[web.1]: empty
+2014-02-09T16:06:23.668556+00:00 app[web.1]: []
+2014-02-09T16:06:23.677696+00:00 app[web.1]: [90mGET /listener [36m304 [90m11ms[0m
+2014-02-09T16:05:20.196235+00:00 heroku[router]: at=info method=GET path=/listener host=playlstr.herokuapp.com request_id=587b6a4b-9836-4b6f-a17d-d6039b465461 fwd="204.9.220.50" dyno=web.1 connect=1ms service=22ms status=304 bytes=0
+2014-02-09T16:06:26.869562+00:00 heroku[router]: at=info method=GET path=/css/style.css host=playlstr.herokuapp.com request_id=eafe9b34-5556-42e9-8097-316b8ec26d73 fwd="204.9.220.50" dyno=web.1 connect=1ms service=6ms status=304 bytes=0
+2014-02-09T16:06:26.867247+00:00 app[web.1]: [90mGET /css/style.css [36m304 [90m4ms[0m
+2014-02-09T16:06:32.085532+00:00 app[web.1]: []
+2014-02-09T16:06:32.085890+00:00 app[web.1]: empty
+2014-02-09T16:06:32.109436+00:00 app[web.1]: [90mGET /listener [36m304 [90m27ms[0m
+2014-02-09T16:06:32.322618+00:00 app[web.1]: [90mGET /css/style.css [36m304 [90m2ms[0m
