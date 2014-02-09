@@ -79,7 +79,7 @@ exports.search = function(req, res){
 				var vid = current.id.$t
 				var split = vid.split("videos\/");
 				var current_vid = {link : "http://www.youtube.com/embed/" + split[1] + "?autoplay=1",
-					thumb : current.media$group.media$thumbnail[0].url, 
+					thumb : current.media$group.media$thumbnail[3].url, 
 					vtitle : current.title.$t,
 					type : "Youtube",
 					time : current.media$group.yt$duration
