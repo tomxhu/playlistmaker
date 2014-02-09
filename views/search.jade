@@ -11,13 +11,12 @@ block content
       div.song
         div.song_text 
           p #{val.vtitle}
-          img(src=val.thumb, class='pict')
           form(method='post', class='song_text')
+            img(src=val.thumb, class='pict', ALT="SUBMIT")
             input(type='hidden', value=val.link, name='link')
             input(type='hidden', value=val.vtitle, name='title')
             input(type='hidden', value=val.type, name='type')
             input(type='hidden', value=val.time.seconds, name='time')
-            input(type='submit', value='This One')
 
           
 
@@ -26,15 +25,14 @@ block content
     each val, index in scresponse
       div.song
         p #{val.sctracktitle}
-        -if(val.sctrackart == null)
-          img(src='http://i.imgur.com/e6CmfVl.png', class='pict')
-        img(src=val.sctrackart, class='pict')
-
         form(method='post')
+          -if(val.sctrackart == null)
+            img(src='http://i.imgur.com/e6CmfVl.png', class='pict', , ALT="SUBMIT")
+          img(src=val.sctrackart, class='pict', ALT="SUBMIT")
           input(type='hidden', value=val.sctrackid, name='link')
           input(type='hidden', value=val.sctracktitle, name='title')
           input(type='hidden', value='Soundcloud', name='type')
           input(type='hidden', value=val.scduration, name='time')
-          input(type='submit', value='This One')
+
 
 
