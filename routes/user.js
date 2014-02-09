@@ -34,6 +34,7 @@ exports.search = function(req, res){
 	var ytthumb;
 	var ytvtitle;
 	var yttime;
+	var videos = new Array();
 
 	// soundcloud vars
 
@@ -67,6 +68,27 @@ exports.search = function(req, res){
 			// 	if (err) throw err;
 			// 	// console.log(result);
 			// });
+			// parse json for url to store
+			
+
+			for (var i = 0; i < bodyJSON.feed.entry.length; i++) {
+				var current = bodyJSON.feed.entry[i];
+				var vid = current.id.$t
+				var split = vid.split("videos\/");
+				var current_vid = {link : "http://www.youtube.com/embed/" + split[1] + "?autoplay=1",
+					thumb : current.media$group.media$thumbnail[3].url, 
+					vtitle : current.title.$t,
+					type : "Youtube",
+					time : current.media$group.yt$duration
+				};
+				videos.push(current_vid);
+			};
+
+
+
+
+
+
 			request('https://api.soundcloud.com/tracks.json?client_id=YOUR_CLIENT_ID&q=' + search.replace(/ /g,'%20'), function (error, response, body){
 				var bodyJSON = JSON.parse(body);
 				sctrackid = bodyJSON[0].id;
@@ -74,7 +96,7 @@ exports.search = function(req, res){
 				scduration = (bodyJSON[0].duration / 1000);
 				console.log(sctrackid + " " + sctracktitle + " " + scduration);
 
-				res.render('search', { title: 'Search', query: search, response: ytthumb, ytvtitle: ytvtitle});
+				res.render('search', { title: 'Search', query: search, response: videos});
 
 			});
 
@@ -134,7 +156,14 @@ exports.search = function(req, res){
 
 
 exports.search_post_handler = function(req, res){
-	// handle input
+
+	if(req.body.link && req.body.type){
+		db.collection('queue').insert({type: req.body.type, url: req.body.type, title: req.body.vtitle, time: req.body.time});
+		db.collection('queue').find().toArray(function(err, result) {
+			if (err) throw err;
+			console.log(result);
+		});
+	}
 
 	res.redirect('/user');
 }
