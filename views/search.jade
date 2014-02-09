@@ -1,10 +1,40 @@
 extends layout
 
 block content
+  p #{split}
   h1= title
   p Welcome to #{title}
   p the searched term was: #{query}
-  p data returned: #{responce}
-  p #{vtitle}
-  img(src=responce)
+
+  
+  each val, index in response
+    block.song 
+      p Title #{val.vtitle}
+      p Link #{val.link}
+      img(src=val.thumb)
+      form(method='post')
+        input(type='hidden', value=val.link, name='link')
+        input(type='hidden', value=val.type, name='type')
+        //input(type='hidden', value=val.durat, name='durat')
+        input(type='submit', value='This One')
+
+
+
+//  block song
+//    p data returned: #{responce}
+//    p #{vtitle}
+//    img(src=responce)
+
+//  block song
+//    p data returned: #{responce}
+//    p #{vtitle}
+//    img(src=responce)
+
+//block content
+//  h1= title
+//  p Welcome to #{title}
+//  p the searched term was: #{query}
+//  p data returned: #{responce}
+//  p #{vtitle}
+//  img(src=responce)
 
