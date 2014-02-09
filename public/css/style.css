@@ -4,6 +4,7 @@ body {
   background-image:url("../playlstr_lg_sm.jpg");
   background-size:cover;
   background-repeat:no-repeat;
+  background-color:#1654C5;
 }
 a {
   color: #00b7ff;
