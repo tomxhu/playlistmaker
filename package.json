@@ -11,7 +11,8 @@
     "stylus": "*",
     "mongoskin": "*",
     "request": "*",
-    "node-rdio": "*",
+    "passport": "*",
+    "passport-rdio": "*",
     "async": "*"
   }
 }

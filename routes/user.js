@@ -2,8 +2,7 @@
 
 var db = require('mongoskin').db('admin:password1@ds027759.mongolab.com:27759/heroku_app22039734', {safe:false});
 var request = require('request');
-var async = require('async');
-var Rdio = require("rdio");
+
 
 exports.home = function(req, res){
 	// get current queue data
@@ -16,8 +15,8 @@ exports.home_post_handler = function(req, res){
 	var id = req.body.id;
 
 	if (search != ''){
-		console.log(req.body.search + "req.body");
-		console.log(req.session.search + "req.session");
+		// console.log(req.body.search + "req.body");
+		// console.log(req.session.search + "req.session");
 		res.redirect('/user/search')
 	} else {
 		// remove id from queue
@@ -26,7 +25,7 @@ exports.home_post_handler = function(req, res){
 
 exports.search = function(req, res){
 	var search = req.session.search
-	console.log(search + " search term")
+	// console.log(search + " search term")
 
 	// yt vars
 	var ytvid;
@@ -36,24 +35,25 @@ exports.search = function(req, res){
 	var ytvtitle;
 	var yttime;
 
+	// soundcloud vars
+
+	var sctrackid;
+	var sctracktitle;
+	var scduration;
+
 	// rdio vars
+	var rdio;
 	var rdiolink;
 
-
-	
-	async.series([
-		// call youtube API
-		request('https://gdata.youtube.com/feeds/api/videos?q=' + search.replace(/ /g,'/') + '&orderby=viewCount&time=all_time&alt=json', function (error, response, body) {
-			if (!error && response.statusCode == 200) {
+	request('https://gdata.youtube.com/feeds/api/videos?q=' + search.replace(/ /g,'/') + '&orderby=viewCount&time=all_time&alt=json', function (error, response, body) {
+		if (!error && response.statusCode == 200) {
 			var bodyJSON = JSON.parse(body);
-			console.log(body);
-
 
 			// parse json for url to store
 			ytvid = bodyJSON.feed.entry[0].id.$t
 
 			ytsplit = ytvid.split("videos\/");
-			ytlink = "http://www.youtube.com/embed/" + split[1] + "?autoplay=1";
+			ytlink = "http://www.youtube.com/embed/" + ytsplit[1] + "?autoplay=1";
 
 			ytthumb = bodyJSON.feed.entry[0].media$group.media$thumbnail[3].url;
 			ytvtitle = bodyJSON.feed.entry[0].title.$t;
@@ -61,34 +61,77 @@ exports.search = function(req, res){
 
 			// adds url to db
 			// add id to db since its YT
-			db.collection('queue').insert({type: "Youtube", url: ytlink, title: ytvtitle, time: yttime});
-			db.collection('queue').find().toArray(function(err, result) {
-				if (err) throw err;
-				console.log(result);
-			}),
+			// db.collection('queue').insert({type: "Youtube", url: ytlink, title: ytvtitle, time: yttime});
+			
+			// db.collection('queue').find().toArray(function(err, result) {
+			// 	if (err) throw err;
+			// 	// console.log(result);
+			// });
+			request('https://api.soundcloud.com/tracks.json?client_id=YOUR_CLIENT_ID&q=' + search.replace(/ /g,'%20'), function (error, response, body){
+				var bodyJSON = JSON.parse(body);
+				sctrackid = bodyJSON[0].id;
+				sctracktitle = bodyJSON[0].title;
+				scduration = (bodyJSON[0].duration / 1000);
+				console.log(sctrackid + " " + sctracktitle + " " + scduration);
 
-		// RDIO API	
-		var rdio = new Rdio(["s3q6u6tb6fvm8kgku5mkfvc7", "GD7gyma85e"]),
-		rdio.call('search', {query: "let it go", types: "Track", method: "search"}, function (data, status, xhr){
-			var bodyJSON = JSON.parse(data);
-			rdiolink = bodyJSON.result[0].embedUrl;
-			console.log(rdiolink);
+				res.render('search', { title: 'Search', query: search, response: ytthumb, ytvtitle: ytvtitle});
 
-		}),
+			});
 
 
-
-
-
-		])
-
-	
-
-		res.render('search', { title: 'Search', query: search, response: ytthumb, ytvtitle: ytvtitle});
 		}
 	});
-	
+
+
+	// async.series({
+ //        yt: function(callback) {
+ //        		request('https://gdata.youtube.com/feeds/api/videos?q=' + search.replace(/ /g,'/') + '&orderby=viewCount&time=all_time&alt=json', function (error, response, body) {
+ //        			if (!error && response.statusCode == 200) {
+ //        				var bodyJSON = JSON.parse(body);
+
+ //        				// parse json for url to store
+ //        				ytvid = bodyJSON.feed.entry[0].id.$t
+
+ //        				ytsplit = ytvid.split("videos\/");
+ //        				ytlink = "http://www.youtube.com/embed/" + ytsplit[1] + "?autoplay=1";
+
+ //        				ytthumb = bodyJSON.feed.entry[0].media$group.media$thumbnail[3].url;
+ //        				ytvtitle = bodyJSON.feed.entry[0].title.$t;
+ //        				yttime = bodyJSON.feed.entry[0].media$group.yt$duration;
+
+ //        				// adds url to db
+ //        				// add id to db since its YT
+ //        				// db.collection('queue').insert({type: "Youtube", url: ytlink, title: ytvtitle, time: yttime});
+        				
+ //        				// db.collection('queue').find().toArray(function(err, result) {
+ //        				// 	if (err) throw err;
+ //        				// 	// console.log(result);
+ //        				// });
+
+ //        			}
+ //        		});
+ //                callback(null, [ytvtitle, ytthumb]);
+ //            },
+ //        sc: function(callback) {
+ //        		request('https://api.soundcloud.com/tracks.json?client_id=YOUR_CLIENT_ID&q=' + search.replace(/ /g,'%20'), function (error, response, body){
+ //        			var bodyJSON = JSON.parse(body);
+ //        			sctrackid = bodyJSON[0].id;
+ //        			sctracktitle = bodyJSON[0].title;
+ //        			scduration = (bodyJSON[0].duration / 1000);
+ //        			//console.log(sctrackid + " " + sctracktitle + " " + scduration);
+ //        		});
+ //                callback(null, [sctrackid, sctracktitle]);
+ //            },
+ //    },
+ //    function(err, response) {
+ //        console.log(response);
+ //        res.render('search', { title: 'Search', query: search, response: ytthumb, ytvtitle: ytvtitle});
+ //    });
+		
 }
+
+	
+
 
 exports.search_post_handler = function(req, res){
 	// handle input
