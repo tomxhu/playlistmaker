@@ -24,6 +24,7 @@ a {
 }
 .song{
 	background-color: #63C6FD;
+	opacity: 0.8;
 	margin-bottom: 10px;
 }
 #soundcloud{
