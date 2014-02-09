@@ -1,6 +1,6 @@
 
 exports.home = function(req, res){
-  res.render('home', { title: 'Party Playlist' })
+  res.render('home', { title: 'Playlistr' })
 };
 
 exports.home_post_handler = function(req, res){

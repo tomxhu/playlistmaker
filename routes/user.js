@@ -1,12 +1,12 @@
 // var db = require('mongoskin').db('localhost:27017/local', {safe:false});
 
-var db = require('mongoskin').db('admin:password1@ds027759.mongolab.com:27759/heroku_app22039734', {safe:false});
+var db = require('mongoskin').db('admin:password1@ds027479.mongolab.com:27479/heroku_app22047216', {safe:false});
 var request = require('request');
 
 
 exports.home = function(req, res){
 	// get current queue data
-	res.render('user', { title: 'User Device' }) // pass as a var 
+	res.render('user', { title: 'Playlistr User Device' }) // pass as a var 
 };
 
 exports.home_post_handler = function(req, res){
@@ -158,7 +158,13 @@ exports.search = function(req, res){
 exports.search_post_handler = function(req, res){
 
 	if(req.body.link && req.body.type){
-		db.collection('queue').insert({type: req.body.type, url: req.body.type, title: req.body.vtitle, time: req.body.time});
+		var time = req.body.time;
+		console.log(req.body.vtitle + "title");
+		console.log(req.body.time + "title");
+		if(req.body.type = "Youtube"){
+			time = req.body.time.seconds
+		}
+		db.collection('queue').insert({type: req.body.type, url: req.body.link, title: req.body.vtitle, time: req.body.time});
 		db.collection('queue').find().toArray(function(err, result) {
 			if (err) throw err;
 			console.log(result);
