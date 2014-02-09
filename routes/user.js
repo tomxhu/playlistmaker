@@ -84,6 +84,7 @@ exports.search = function(req, res){
 					type : "Youtube",
 					time : current.media$group.yt$duration
 				};
+				//console.log(current_vid.time);
 				videos.push(current_vid);
 			};
 
@@ -97,18 +98,18 @@ exports.search = function(req, res){
 				}
 
 				for (var i = 0; i < limits_of_array; i++) {
-					var time = parseInt(bodyJSON[i].duration);
-					time = Math.round(time/ 1000);
-					console.log(bodyJSON[i]);
+					var sctime = parseInt(bodyJSON[i].duration);
+					sctime = Math.round(sctime/ 1000);
+					//console.log(bodyJSON[i]);
 					var sc_data = {	sctrackid: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/' + bodyJSON[i].id + '&amp;auto_play=true',
 									sctracktitle: bodyJSON[i].title,
 									sctrackart: bodyJSON[i].artwork_url,
-									scduration: time
+									scduration: sctime
 					};
 					sc_response.push(sc_data);
 				}
 
-				console.log(sc_response);
+				//console.log(videos[0].time);
 				res.render('search', { title: 'Search', query: search, ytresponse: videos, scresponse: sc_response});
 
 			});
@@ -125,12 +126,14 @@ exports.search_post_handler = function(req, res){
 
 	if(req.body.link && req.body.type){
 		var time = req.body.time;
+		console.log(time);
 
 		// console.log(req.body.vtitle + "title");
 		// console.log(req.body.time + "title");
-		if(req.body.type = "Youtube"){
-			time = req.body.time.seconds
-		}
+		// if(req.body.type = "Youtube"){
+		// 	time = parseInt(req.body.time.seconds);
+		// 	console.log(time);
+		// }
 
 
 		db.collection('queue').insert({type: req.body.type, url: req.body.link, title: req.body.vtitle, time: req.body.time});
