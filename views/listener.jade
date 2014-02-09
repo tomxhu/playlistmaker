@@ -9,5 +9,6 @@ html
       h1= title
       p Welcome to #{title}
       div
-        iframe(width='640', height='360', src=response, frameborder='0', allowfullscreen='allowfullscreen')
+        -if(type == "Youtube" || "Soundcloud")
+          iframe(src=response, frameborder='0', allowfullscreen='allowfullscreen')
 

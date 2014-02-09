@@ -38,9 +38,7 @@ exports.search = function(req, res){
 
 	// soundcloud vars
 
-	var sctrackid;
-	var sctracktitle;
-	var scduration;
+	var sc_response = new Array();
 
 	// rdio vars
 	var rdio;
@@ -71,7 +69,7 @@ exports.search = function(req, res){
 			// parse json for url to store
 			
 
-			for (var i = 0; i < bodyJSON.feed.entry.length; i++) {
+			for (var i = 0; i < 5; i++) {
 				var current = bodyJSON.feed.entry[i];
 				var vid = current.id.$t
 				var split = vid.split("videos\/");
@@ -91,12 +89,16 @@ exports.search = function(req, res){
 
 			request('https://api.soundcloud.com/tracks.json?client_id=YOUR_CLIENT_ID&q=' + search.replace(/ /g,'%20'), function (error, response, body){
 				var bodyJSON = JSON.parse(body);
-				sctrackid = bodyJSON[0].id;
-				sctracktitle = bodyJSON[0].title;
-				scduration = (bodyJSON[0].duration / 1000);
-				console.log(sctrackid + " " + sctracktitle + " " + scduration);
 
-				res.render('search', { title: 'Search', query: search, response: videos});
+				for (var i = 0; i < 5; i++) {
+					var sc_data = {	sctrackid: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/' + bodyJSON[i].id + '&amp;auto_play=true',
+									sctracktitle: bodyJSON[i].title,
+									scduration: (bodyJSON[i].duration / 1000)};
+					sc_response.push(sc_data);
+				}
+
+
+				res.render('search', { title: 'Search', query: search, ytresponse: videos, scresponse: sc_response});
 
 			});
 
@@ -159,11 +161,14 @@ exports.search_post_handler = function(req, res){
 
 	if(req.body.link && req.body.type){
 		var time = req.body.time;
-		console.log(req.body.vtitle + "title");
-		console.log(req.body.time + "title");
+
+		// console.log(req.body.vtitle + "title");
+		// console.log(req.body.time + "title");
 		if(req.body.type = "Youtube"){
 			time = req.body.time.seconds
 		}
+
+
 		db.collection('queue').insert({type: req.body.type, url: req.body.link, title: req.body.vtitle, time: req.body.time});
 		db.collection('queue').find().toArray(function(err, result) {
 			if (err) throw err;

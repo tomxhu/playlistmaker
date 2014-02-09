@@ -6,18 +6,29 @@ block content
   p Welcome to #{title}
   p the searched term was: #{query}
   //p data returned: #{response}
-
-  each val, index in response
-    block.song 
-      p Title #{val.vtitle}
-      -if(val.type=='Youtube')
+  #youtube.returnList
+    each val, index in ytresponse
+      block.song 
+        p Title: #{val.vtitle}
         img(src=val.thumb)
 
-      form(method='post')
-        input(type='hidden', value=val.link, name='link')
-        input(type='hidden', value=val.vtitle, name='vtitle')
-        input(type='hidden', value=val.type, name='type')
-        input(type='hidden', value=val.time, name='time')
-        input(type='submit', value='This One')
+        form(method='post')
+          input(type='hidden', value=val.link, name='link')
+          input(type='hidden', value=val.vtitle, name='title')
+          input(type='hidden', value=val.type, name='type')
+          input(type='hidden', value=val.time, name='time')
+          input(type='submit', value='This One')
+
+  #soundcloud.returnList
+    each val, index in scresponse
+      block.song 
+        p Title: #{val.vtitle}
+
+        form(method='post')
+          input(type='hidden', value=val.sctrackid, name='link')
+          input(type='hidden', value=val.sctracktitle, name='title')
+          input(type='hidden', value='Soundcloud', name='type')
+          input(type='hidden', value=val.scduration, name='time')
+          input(type='submit', value='This One')
 
 
