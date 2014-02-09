@@ -91,13 +91,16 @@ exports.search = function(req, res){
 				var bodyJSON = JSON.parse(body);
 
 				for (var i = 0; i < 5; i++) {
-					var sc_data = {	sctrackid: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/' + bodyJSON[i].id + '&amp;auto_play=true',
-									sctracktitle: bodyJSON[i].title,
-									scduration: (bodyJSON[i].duration / 1000)};
+					var time = parseInt(bodyJSON[i].duration);
+					time = Math.round(time/ 1000);
+					var sc_data = {	sctrackid: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/' + bodyJSON[i].id + '&amp;auto_play=true'.toString(),
+									sctracktitle: bodyJSON[i].title.toString(),
+									scduration: time
+					};
 					sc_response.push(sc_data);
 				}
 
-
+				console.log(sc_response);
 				res.render('search', { title: 'Search', query: search, ytresponse: videos, scresponse: sc_response});
 
 			});

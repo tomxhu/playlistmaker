@@ -20,15 +20,6 @@ block content
           input(type='submit', value='This One')
 
   #soundcloud.returnList
-    each val, index in scresponse
-      block.song 
-        p Title: #{val.vtitle}
-
-        form(method='post')
-          input(type='hidden', value=val.sctrackid, name='link')
-          input(type='hidden', value=val.sctracktitle, name='title')
-          input(type='hidden', value='Soundcloud', name='type')
-          input(type='hidden', value=val.scduration, name='time')
-          input(type='submit', value='This One')
+    p #{scresponce}
 
 
