@@ -1,13 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  center
+    //img(src='../playlstr_md_sm.jpg', id='lg_logo')
 
-  form(method='post')
-    | Search for songs
-    div
-      input(type='text', maxlength="20", name='search')
-      input(type='submit', value='search')
-  form(method='post')
-    | Queue of songs
+
+    p(class='greeting') Queue up for the Party
+
+    form(method='post')
+      div
+        input(type='text', maxlength="20", name='search')
+        input(type='submit', value='search')
+    form(method='post')

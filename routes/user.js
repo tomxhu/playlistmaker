@@ -68,8 +68,13 @@ exports.search = function(req, res){
 			// });
 			// parse json for url to store
 			
+			var limits_of_array = 20;
+			if(bodyJSON.feed.entry.length < limits_of_array){
+				limits_of_array = bodyJSON.feed.entry.length;
+			}
 
-			for (var i = 0; i < 5; i++) {
+
+			for (var i = 0; i < limits_of_array; i++) {
 				var current = bodyJSON.feed.entry[i];
 				var vid = current.id.$t
 				var split = vid.split("videos\/");
@@ -83,18 +88,21 @@ exports.search = function(req, res){
 			};
 
 
-
-
-
-
 			request('https://api.soundcloud.com/tracks.json?client_id=YOUR_CLIENT_ID&q=' + search.replace(/ /g,'%20'), function (error, response, body){
 				var bodyJSON = JSON.parse(body);
 
-				for (var i = 0; i < 5; i++) {
+				var limits_of_array = 20;
+				if(bodyJSON.length < limits_of_array){
+					limits_of_array = bodyJSON.length;
+				}
+
+				for (var i = 0; i < limits_of_array; i++) {
 					var time = parseInt(bodyJSON[i].duration);
 					time = Math.round(time/ 1000);
-					var sc_data = {	sctrackid: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/' + bodyJSON[i].id + '&amp;auto_play=true'.toString(),
-									sctracktitle: bodyJSON[i].title.toString(),
+					console.log(bodyJSON[i]);
+					var sc_data = {	sctrackid: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/' + bodyJSON[i].id + '&amp;auto_play=true',
+									sctracktitle: bodyJSON[i].title,
+									sctrackart: bodyJSON[i].artwork_url,
 									scduration: time
 					};
 					sc_response.push(sc_data);
@@ -105,55 +113,8 @@ exports.search = function(req, res){
 
 			});
 
-
 		}
 	});
-
-
-	// async.series({
- //        yt: function(callback) {
- //        		request('https://gdata.youtube.com/feeds/api/videos?q=' + search.replace(/ /g,'/') + '&orderby=viewCount&time=all_time&alt=json', function (error, response, body) {
- //        			if (!error && response.statusCode == 200) {
- //        				var bodyJSON = JSON.parse(body);
-
- //        				// parse json for url to store
- //        				ytvid = bodyJSON.feed.entry[0].id.$t
-
- //        				ytsplit = ytvid.split("videos\/");
- //        				ytlink = "http://www.youtube.com/embed/" + ytsplit[1] + "?autoplay=1";
-
- //        				ytthumb = bodyJSON.feed.entry[0].media$group.media$thumbnail[3].url;
- //        				ytvtitle = bodyJSON.feed.entry[0].title.$t;
- //        				yttime = bodyJSON.feed.entry[0].media$group.yt$duration;
-
- //        				// adds url to db
- //        				// add id to db since its YT
- //        				// db.collection('queue').insert({type: "Youtube", url: ytlink, title: ytvtitle, time: yttime});
-        				
- //        				// db.collection('queue').find().toArray(function(err, result) {
- //        				// 	if (err) throw err;
- //        				// 	// console.log(result);
- //        				// });
-
- //        			}
- //        		});
- //                callback(null, [ytvtitle, ytthumb]);
- //            },
- //        sc: function(callback) {
- //        		request('https://api.soundcloud.com/tracks.json?client_id=YOUR_CLIENT_ID&q=' + search.replace(/ /g,'%20'), function (error, response, body){
- //        			var bodyJSON = JSON.parse(body);
- //        			sctrackid = bodyJSON[0].id;
- //        			sctracktitle = bodyJSON[0].title;
- //        			scduration = (bodyJSON[0].duration / 1000);
- //        			//console.log(sctrackid + " " + sctracktitle + " " + scduration);
- //        		});
- //                callback(null, [sctrackid, sctracktitle]);
- //            },
- //    },
- //    function(err, response) {
- //        console.log(response);
- //        res.render('search', { title: 'Search', query: search, response: ytthumb, ytvtitle: ytvtitle});
- //    });
 		
 }
 

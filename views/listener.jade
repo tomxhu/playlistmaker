@@ -6,9 +6,9 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     block content
-      h1= title
-      p Welcome to #{title}
-      div
-        -if(type == "Youtube" || "Soundcloud")
-          iframe(src=response, frameborder='0', allowfullscreen='allowfullscreen')
+      center
+        p(class='greeting') Life of the Party
+        div
+          -if(type == "Youtube" || "Soundcloud")
+            iframe(src=response, frameborder='0', allowfullscreen='allowfullscreen')
 

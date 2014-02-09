@@ -9,13 +9,13 @@ exports.home = function(req, res){
 			if (result.length == 0){
 				// empty list of songs
 				console.log("empty");
-				res.render('listener', { title: 'Playlistr Listening Device', time: 5});
+				res.render('listener', { title: 'Playlstr Listening Device', time: 5});
 			} else {
 				var strtime = result[0].time;
 				console.log(strtime);
 				var time = parseInt(strtime);
 				console.log(time);
-				res.render('listener', { title: 'Playlistr Listening Device', response: result[0].url, time: time});
+				res.render('listener', { title: 'Playlstr Listening Device', response: result[0].url, time: time});
 				db.collection('queue').remove(result[0],function(err){
 					if (!err) console.log('entry deleted!');
 					db.collection('queue').find().toArray(function(err, result) {
