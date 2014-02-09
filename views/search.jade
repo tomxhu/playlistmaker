@@ -3,14 +3,14 @@ extends layout
 block content
   p #{split}
   h1= title
-  p Welcome to #{title}
-  p the searched term was: #{query}
+  p The searched term was: #{query}
   //p data returned: #{response}
   #youtube.returnList
+    h1 YouTube
     each val, index in ytresponse
       div.song
         div.song_text 
-          p Title: #{val.vtitle}
+          p #{val.vtitle}
           img(src=val.thumb, class='pict')
           form(method='post', class='song_text')
             input(type='hidden', value=val.link, name='link')
@@ -22,9 +22,12 @@ block content
           
 
   #soundcloud.returnList
+    h1 SoundCloud
     each val, index in scresponse
       div.song
-        p Title: #{val.sctracktitle}
+        p #{val.sctracktitle}
+        -if(val.sctrackart == null)
+          img(src='http://imgur.com/e6CmfVl', class='pict')
         img(src=val.sctrackart, class='pict')
 
         form(method='post')
