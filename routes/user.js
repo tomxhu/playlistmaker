@@ -46,7 +46,7 @@ exports.search = function(req, res){
 	var rdio;
 	var rdiolink;
 
-	request('https://gdata.youtube.com/feeds/api/videos?q=' + search.replace(/ /g,'/') + '&orderby=viewCount&time=all_time&alt=json', function (error, response, body) {
+	request('https://gdata.youtube.com/feeds/api/videos?q=' + search.replace(/ /g,'%20') + '&orderby=viewCount&time=all_time&alt=json', function (error, response, body) {
 		if (!error && response.statusCode == 200) {
 			var bodyJSON = JSON.parse(body);
 
